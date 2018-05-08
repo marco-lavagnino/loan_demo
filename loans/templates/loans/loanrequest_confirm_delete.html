@@ -1,0 +1,4 @@
+<form method="post">{% csrf_token %}
+    <p>Seguro que desea eliminar el pedido #{{ object.pk }}?</p>
+    <input type="submit" value="Eliminar" />
+</form>

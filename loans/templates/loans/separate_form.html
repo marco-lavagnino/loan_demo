@@ -1,0 +1,20 @@
+
+
+{% if backend_response %}
+    
+    {% if backend_response.error %}
+        Error desconocido. Por favor intenta nuevamente.
+    {% elif backend_response.approved %}
+        Tu pedido ha sido aprobado.
+    {% else %}
+        Tu pedido no ha sido aprobado.
+    {% endif %}
+
+{% else %}
+
+    {{ form.as_p }}
+    <input type="submit" value="Pedir prestamo" />
+
+{% endif %}
+    
+
