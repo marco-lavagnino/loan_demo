@@ -1,4 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
 <a href="/loans">admin</a>
+
+<br>
+
+<h1>Otorgador de prestamos</h1>
+
+<div style="color: #999">
+Completa el siguiente formulario para saber si te otorgamos un préstamo.
+</div>
+<br>
 
 {% csrf_token %}
 <form id="theForm" method="post">
@@ -47,3 +61,4 @@ window.onload = function () {
     }
 }
 </script>
+{% endblock content %}

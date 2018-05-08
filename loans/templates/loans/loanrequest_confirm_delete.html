@@ -1,4 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<a href="/loans">atrás</a>
+<br>
+
+<h1>Eliminando pedido #{{ object.pk }}</h1>
+
+<br>
+
 <form method="post">{% csrf_token %}
     <p>Seguro que desea eliminar el pedido #{{ object.pk }}?</p>
-    <input type="submit" value="Eliminar" />
+    <input type="submit" class="btn btn-danger" value="Eliminar" />
 </form>
+{% endblock content %}

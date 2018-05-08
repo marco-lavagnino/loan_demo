@@ -1,8 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
 <a href="/logout">logout</a>
 
 <h1>Pedidos de préstamos</h1>
 
-<table>
+<table class="table">
 <thead>
 <tr>
     <td>DNI</td>
@@ -22,8 +26,12 @@
         <td>{{ object.gender }}</td>
         <td>{{ object.email }}</td>
         <td>{{ object.amount }}</td>
-        <td><a href="/loans/{{ object.pk }}/update">editar</a></td>
-        <td><a href="/loans/{{ object.pk }}/delete">eliminar</a></td>
+        <td>
+            <a class="btn btn-warning btn-sm" href="/loans/{{ object.pk }}/update">editar</a>
+        </td>
+        <td>
+            <a class="btn btn-danger btn-sm" href="/loans/{{ object.pk }}/delete">eliminar</a>
+        </td>
     </tr>
 {% empty %}
     <tr>No hay pedidos aún.</tr>
@@ -32,3 +40,4 @@
 </tbody>
 
 </table>
+{% endblock content %}
